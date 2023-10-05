@@ -9,6 +9,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    'https://preview.hoolisoftware.xyz'
+]
 # CORS_ALLOWED_ORIGINS = [
 #     'http://localhost:5173',
 # ]
@@ -95,7 +98,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static/'
-MEDIA_URL = 'media/' 
+MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
