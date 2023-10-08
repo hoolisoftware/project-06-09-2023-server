@@ -29,3 +29,13 @@ class SpecialistViewSet(viewsets.ModelViewSet):
 class MediaViewSet(viewsets.ModelViewSet):
     queryset = models.Media.objects.all()
     serializer_class = serializers.MediaSerializer
+
+
+class BeforeAfterSectionViewSet(viewsets.ModelViewSet):
+    queryset = models.BeforeAfterSection.objects.all()
+    serializer_class = serializers.BeforeAfterSectionSerializer
+
+
+class BeforeAfterUnitViewSet(viewsets.ModelViewSet):
+    queryset = models.BeforeAfterUnit.objects.all()
+    serializer_class = serializers.BeforeAfterUnitSerializer

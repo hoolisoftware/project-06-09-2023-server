@@ -25,3 +25,17 @@ class MediaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Media
         fields = '__all__'
+
+
+class BeforeAfterUnitSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.BeforeAfterUnit
+        fields = '__all__'
+
+
+class BeforeAfterSectionSerializer(serializers.ModelSerializer):
+    units = BeforeAfterUnitSerializer(many=True)
+
+    class Meta:
+        model = models.BeforeAfterSection
+        fields = '__all__'

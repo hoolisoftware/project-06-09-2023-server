@@ -32,3 +32,18 @@ class MediaAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
+
+
+@admin.register(models.BeforeAfterSection)
+class BeforeAfterSectionAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+    )
+
+
+@admin.register(models.BeforeAfterUnit)
+class BeforeAfterUnitAdmin(admin.ModelAdmin):
+    list_display = (
+        'image',
+        'name'
+    )

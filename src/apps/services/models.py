@@ -3,13 +3,14 @@ from django.db import models
 
 class Price(models.Model):
     title = models.CharField('Название', max_length=64)
-    price = models.IntegerField('Цена', blank=True, null=True)
+    price = models.IntegerField('Цена', blank=True, null=True, help_text='Заметка: 0 если бесплатно, -1 что бы не показывать цену') # noqa
     prices = models.ManyToManyField(verbose_name='Цены', to='self', blank=True) # noqa
     starting_from = models.BooleanField('Начинается от?', default=False)
 
     class Meta:
         verbose_name = 'Цена'
         verbose_name_plural = 'Цены'
+        ordering = ['id']
 
     def __str__(self):
         return f'{self.title} {self.price if self.price else self.prices.count()}' # noqa
@@ -23,6 +24,7 @@ class Service(models.Model):
     class Meta:
         verbose_name = 'Комплекс услуг'
         verbose_name_plural = 'Комплексы услуг'
+        ordering = ['id']
 
     def __str__(self):
         return self.title
