@@ -16,13 +16,14 @@ class AuthorSerializer(serializers.HyperlinkedModelSerializer):
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Category
-        fields = ['name']
+        fields = '__all__'
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
-    categories = serializers.StringRelatedField(many=True)
+    id = serializers.ReadOnlyField()
+    categories = CategorySerializer(many=True)
     author = AuthorSerializer()
 
     class Meta:
         model = models.Post
-        fields = ['id', 'title', 'image', 'content', 'excerpt', 'categories', 'author', 'created'] # noqa
+        fields = '__all__' # noqa

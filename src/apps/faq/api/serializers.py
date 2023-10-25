@@ -6,4 +6,4 @@ from .. import models
 class FAQSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.FAQ
-        fields = ['id', 'question', 'answer']
+        fields = '__all__'

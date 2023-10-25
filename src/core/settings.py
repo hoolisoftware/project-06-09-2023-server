@@ -17,6 +17,7 @@ CSRF_TRUSTED_ORIGINS = [
 # ]
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -112,3 +113,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ]
 }
+
+gettext = lambda s: s # noqa ignore
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('ru', gettext('Русский')),
+    ('fin', gettext('Finn')),
+)
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
