@@ -9,9 +9,11 @@ django-modeltranslation==0.18.11
 djangorestframework==3.14.0
 filelock==3.9.0
 flake8==6.0.0
+gunicorn==21.2.0
 importlib-metadata==6.8.0
 Markdown==3.4.4
 mccabe==0.7.0
+packaging==23.2
 Pillow==10.0.1
 platformdirs==3.0.0
 pycodestyle==2.10.0
