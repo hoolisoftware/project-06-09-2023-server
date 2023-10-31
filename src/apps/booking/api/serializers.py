@@ -1,15 +1,26 @@
+from drf_recaptcha.fields import ReCaptchaV2Field
 from rest_framework import serializers
 
 from .. import models
 
 
-class FormFeedbackSerializer(serializers.ModelSerializer):
+class RecaptchaMixin():
+
+    recaptcha = ReCaptchaV2Field()
+
+    def validate(self, attrs):
+        attrs.pop("recaptcha")
+        return attrs
+
+
+class FormFeedbackSerializer(serializers.ModelSerializer, RecaptchaMixin):
     class Meta:
         model = models.FormFeedback
         fields = '__all__'
 
 
-class FormPhoneSerializer(serializers.ModelSerializer):
+class FormPhoneSerializer(serializers.ModelSerializer, RecaptchaMixin):
+
     class Meta:
         model = models.FormPhone
         fields = '__all__'
@@ -21,7 +32,7 @@ class BookingSessionSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class BookingSerializer(serializers.ModelSerializer):
+class BookingSerializer(serializers.ModelSerializer, RecaptchaMixin):
     class Meta:
         model = models.Booking
         fields = '__all__'

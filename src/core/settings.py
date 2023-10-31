@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'drf_recaptcha',
     'corsheaders',
     'rest_framework',
     'django_filters',
@@ -122,3 +123,8 @@ LANGUAGES = (
 )
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
+# 6LdgzN4oAAAAAAh76VbpoYQpeve2Z93N4M-bExz2
+DRF_RECAPTCHA_SECRET_KEY = "6LfTJN8oAAAAAH9mtVuNoWjUqPK7SuAX7iRcpieo"
+# 6LfTJN8oAAAAAIuxGZP71utUOLHBoYspKyiiygnD
+# 6LfTJN8oAAAAAH9mtVuNoWjUqPK7SuAX7iRcpieo
