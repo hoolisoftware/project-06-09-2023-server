@@ -5,8 +5,10 @@ distlib==0.3.6
 Django==4.2.5
 django-cors-headers==4.2.0
 django-filter==23.3
+django-ipware==5.0.2
 django-modeltranslation==0.18.11
 djangorestframework==3.14.0
+drf-recaptcha==3.0.0
 filelock==3.9.0
 flake8==6.0.0
 gunicorn==21.2.0
